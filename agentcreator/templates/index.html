@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="/" method="post">
+            {% csrf_token %}
+            <label for="prompt">Prompt:</label>
+            <input type="text" name="prompt" value="{{ prompt }}">
+            <input type="submit" value="Submit">
+        </form>
+
+        LLM Response:
+        <pre>
+            {{ llm_response }}
+        </pre>
+    </body>
+</html>
