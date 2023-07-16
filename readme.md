@@ -23,7 +23,7 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-# create a superuser:
+* create a superuser:
 ```
 python manage.py createsuperuser
 ```
