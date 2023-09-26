@@ -18,6 +18,10 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
+
+* add OPENAI_API_KEY to .env file
+
+
 * run migrations:
 ```
 python manage.py migrate
