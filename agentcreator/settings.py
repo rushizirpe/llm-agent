@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-w5b7s&a7fx#49@whp2pq&(&m4&kncsq(cd)m08hr1anq16zrk9
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+TIME_ZONE = 'UTC'
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ml.3bigshc.com']
 
 # Application definition
 
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'agentcreator'
+    'agentcreator',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
+]
+CORS_ALLOWED_ORIGINS = [
+    "http://ml.3bigshc.com:8000"
 ]
 
 ROOT_URLCONF = 'agentcreator.urls'

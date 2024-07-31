@@ -1,16 +1,35 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <form action="/" method="post">
-            {% csrf_token %}
-            <label for="prompt">Prompt:</label>
-            <input type="text" name="prompt" value="{{ prompt }}">
-            <input type="submit" value="Submit">
-        </form>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model API</title>
+</head>
+<body>
+    <h1>Chat Completion</h1>
+    <form action="/v1/chat/completions/" method="post">
+        {% csrf_token %}
+        <label for="prompt">Prompt:</label>
+        <input type="text" name="prompt" value="{{ prompt }}">
+        <input type="submit" value="Submit">
+    </form>
 
-        LLM Response:
-        <pre>
-            {{ llm_response }}
-        </pre>
-    </body>
+    <h3>LLM Response:</h3>
+    <pre>
+        {{ llm_response }}
+    </pre>
+
+    <h1>Get Embeddings</h1>
+    <form action="/v1/embeddings/" method="post">
+        {% csrf_token %}
+        <label for="text">Enter text for embeddings:</label>
+        <input type="text" id="text" name="text" required>
+        <input type="submit" value="Get Embeddings">
+    </form>
+
+    <h3>Embeddings:</h3>
+    <pre>
+        {{ embeddings_response }}
+    </pre>
+</body>
 </html>

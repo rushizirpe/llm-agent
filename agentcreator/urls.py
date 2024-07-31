@@ -17,7 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from agentcreator import views
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", views.index, name="index"),
+    path('', views.index, name='index'),
+    path('launch/', views.launch_api, name='launch_api'),
+    path('stop/', views.stop_api, name='stop_api'),
+    path('v1/chat/completions/', views.chat_completion, name='chat_completion'),
+    path('v1/embeddings/', views.get_embeddings, name='get_embeddings'),
+    path('api/', views.api_view, name='api_view'),
 ]
