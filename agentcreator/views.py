@@ -34,7 +34,8 @@ def chat_completion(request):
             response = chat_model(prompt, max_length=50, num_return_sequences=1)
             generated_text = response[0]['generated_text']
             
-            return JsonResponse({'text': generated_text.rsplit('.', 1)[0].replace(prompt, '').strip() + "."})
+            response_text = generated_text.rsplit('.', 1)[0].replace(prompt, '').strip() + "."
+            return JsonResponse({'text': response_text})
 
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
