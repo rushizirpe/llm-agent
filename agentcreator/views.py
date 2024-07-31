@@ -48,7 +48,6 @@ def get_embeddings(request):
         if text:
             embeddings = embedding_model(text)
             return JsonResponse({'embeddings': embeddings[0][0]}) 
-
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
 def api_view(request):
